@@ -1,0 +1,78 @@
+body {
+}
+
+.data {
+    display: none;
+}
+
+.deck {
+    text-align: center;
+}
+.deck__next,
+.deck__start {
+    display: inline-block;
+    width: 45%;
+    height: 50px;
+    margin: 5px 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-color: #fff;
+    font-size: 15px;
+}
+.deck__next {
+    width: 90%;
+}
+
+.deck__next:hover,
+.deck__start:hover {
+    background-color: #eee;
+}
+.deck__results {
+    height: 50px;
+    line-height: 20px;
+    font-size: 20px;
+}
+
+.card {
+    display: inline-block;
+    width: 400px;
+    border: 1px solid #ddd;
+}
+.card__word {
+    height: 100px;
+    text-align: center;
+    vertical-align: middle;
+}
+.card__word-inner {
+    line-height: 30px;
+    font-size: 30px;
+    position: relative;
+    transform: translateY(-50%);
+    top: 50%;
+}
+.card__options {
+    text-align: center;
+}
+.card__option {
+    display: inline-block;
+    width: 45%;
+    min-height: 60px;
+    margin: 5px 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-color: #fff;
+    vertical-align: top;
+    font: 16px system-ui;
+    padding: 2px 6px 3px;
+}
+.card__option:hover {
+    background-color: #eee;
+}
+.card__option--correct,
+.card__option--correct:hover {
+    border: 5px solid green;
+}
+.card__option--selected,
+.card__option--selected:hover {
+    border: 5px solid red;
+}
