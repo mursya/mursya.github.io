@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
                     throw Error('can\'t parse: ' + row);
                 });
-                deck = new Deck({ words: shuffle(words).splice(0, 10) });
+                deck = new Deck({ words: shuffle(words).splice(0, 30) });
 
                 let $deck = q('.deck');
                 $deck.innerHTML = '<form class="deck__form"><button value="next">Start</button></form>';
