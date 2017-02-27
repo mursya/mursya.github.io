@@ -105,13 +105,16 @@ document.addEventListener("DOMContentLoaded", function() {
                 deck = new Deck({ words: shuffle(words).splice(0, 30) });
 
                 let $deck = q('.deck');
-                $deck.innerHTML = '<form class="deck__form"><button value="next">Start</button></form>';
+                $deck.innerHTML = '<form action="/" class="deck__form"><button value="next">Start</button></form>';
 
-                q('.deck__form').addEventListener('submit', function(e) {
+                q('.deck__form').addEventListener('click', function(e) {
                     e.preventDefault();
-                    let action = document.activeElement.value;
+                    console.log(e.target);
+                    if (e.target && e.target.tagName === 'BUTTON') {
+                        let action = e.target.value;
 
-                    showAction(action);
+                        showAction(action);
+                    }
                 });
             }
             case 'next': {
@@ -122,10 +125,10 @@ document.addEventListener("DOMContentLoaded", function() {
                         <div class="card__word"><span class="card__word-inner">${card._word.toLowerCase()}</span></div>
                         <div class="card__desc">&nbsp;</div>
                         <div class="card__options">
-                            <button class="card__option" value="chose0">${card._options[0].toLowerCase()}</button>
-                            <button class="card__option" value="chose1">${card._options[1].toLowerCase()}</button>
-                            <button class="card__option" value="chose2">${card._options[2].toLowerCase()}</button>
-                            <button class="card__option" value="chose3">${card._options[3].toLowerCase()}</button>
+                            <button class="card__option" type="submit" value="chose0">${card._options[0].toLowerCase()}</button>
+                            <button class="card__option" type="submit" value="chose1">${card._options[1].toLowerCase()}</button>
+                            <button class="card__option" type="submit" value="chose2">${card._options[2].toLowerCase()}</button>
+                            <button class="card__option" type="submit" value="chose3">${card._options[3].toLowerCase()}</button>
                         </div>
                     </div>
                     `;
